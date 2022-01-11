@@ -10,3 +10,10 @@ In case <IMAGE_NAME> does not exist, the logo will default to the favicon presen
 *Specifications:*
  - File format: .png (only)
  - Image resolution: 128x128
+
+*Directory structure:*
+ - assets/`<FIRST_LETTER_OF_THE_DOMAIN>`/`<DOMAIN_NAME>.png`
+
+*Examples:*
+ - kiwibrowser.net: assets/k/kiwibrowser.net.png
+ - 007.com: assets/0/007.com.png
