@@ -30,8 +30,9 @@ By default, the subdomains are all pointing to the logo of the root domain.
 The only exceptions, are the domains listed in the public suffix list ( https://publicsuffix.org/list/public_suffix_list.dat ).
 For the domains listed in the .dat file, we keep the subdomain intact.
 
-Essentially, `www.google.com` and `google.com` will be canonicalized to `g/google.com.png`
-`test.blogspot.com` and `test2.blogspot.com` are two different sites, and two different files (`t/test.blogspot.com.png` and `t/test2.blogspot.com.png`).
+This means that `www.google.com` and `google.com` are going to be canonicalized to `g/google.com.png`.
+
+Because `blogspot.com` is in the public suffix list, `test.blogspot.com` and `test2.blogspot.com` are considered to be two different domains, which means two different files (`t/test.blogspot.com.png` and `t/test2.blogspot.com.png`).
 
 To parse the public suffix list and get the root domain, we are using: https://github.com/lupomontero/psl
 
