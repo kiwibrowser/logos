@@ -25,6 +25,7 @@ jobs:
       - name: Get url var
         env: 
           URL : ${{ github.event.inputs.url }}
+        run: echo "${URL}"
 
       - name: Get favicon and save to temp image
         run: curl -Ls -w %{url_effective} -o assets/${URL:0:1}/${URL}.png "https://besticon-demo.herokuapp.com/icon?url=${URL}&size=32..50..128" 
