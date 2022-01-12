@@ -22,12 +22,16 @@ jobs:
       - name: Get branch name
         id: branch-name
         uses: tj-actions/branch-names@v4.8
+      - name: Get url var
+        env: 
+          URL : ${{ github.event.inputs.url }}
+
       - name: Get favicon and save to temp image
-        run: curl -Ls -w %{url_effective} -o image.png "https://besticon-demo.herokuapp.com/icon?url=${{ github.event.inputs.url }}&size=32..50..120..128" 
+        run: curl -Ls -w %{url_effective} -o assets/${URL:0:1}/${URL}.png "https://besticon-demo.herokuapp.com/icon?url=${URL}&size=32..50..128" 
 
       - name: Git Auto Commit
         uses: stefanzweifel/git-auto-commit-action@v4.11.0
         with:
           # Commit message
-          commit_message: Add ${{ github.event.inputs.url }}.png icon
+          commit_message: Add ${URL}.png icon
           file_pattern: ./*.png
