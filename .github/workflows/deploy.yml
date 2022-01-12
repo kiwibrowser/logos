@@ -1,5 +1,5 @@
-# Build APKs for Kiwi Browser Next
-name: 'Main branch: Deploy updated logos'
+# Deploy logos to production cache server
+name: 'Main branch: Deploy logos to production'
 
 # Controls when the action will run. Triggers the workflow on pull request events or manual trigger
 on:
