@@ -5,7 +5,13 @@ This is the service behind logos.kiwibrowser.com
 
 The resources uploaded here can be accessed via `https://logos.kiwibrowser.com/<IMAGE_NAME>`
 
-In case <IMAGE_NAME> does not exist, the logo will default to the favicon present in the headers of the website (generally `apple-touch-icon.png`).
+| Header                   | Meaning                                                                                                                                                       |
+|--------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| X-From-GitHub-Cache: Yes | The logo was served from a cached version of this GitHub repository.This is the header you are going to see if the logo is served from this repository.      |
+| X-From-Cache: Yes        | The logo was served from cache.                                                                                                                               |
+| X-From-Cache: No         | No matching logos were found so a new high-resolution logo was captured by the fetch server directly on the target domain (generally `apple-touch-icon.png`). |
+
+In case of `HTTP Error Code 404`, this means the domain was not found and no alternative could be provided.
 
 *Specifications:*
  - File format: .png (only)
